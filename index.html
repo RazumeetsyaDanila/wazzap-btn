@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +13,12 @@
 
 <body>
 
+    <div class="wazzapMainContainer">
+
+    
     <a href="#" data-hystmodal="#myModal">
         <div class="whatsapp-button">
-            <img src="phone.png" alt="" style="width: 32px;">
+            <img src="wazzap_icons/contact_icon.png" alt="" style="width: 32px;">
         </div>
     </a>
 
@@ -27,20 +31,59 @@
                     <p class="modalContentTitle">
                         Свяжитесь с нами:
                     </p>
+                    <a href="tel:+79999999999">
+                        <div class="callBtn" id="message"> Позвонить <img src="wazzap_icons/call_icon.png" alt="">
+                        </div>
+
+                    </a>
                     <a href="https://api.whatsapp.com/send?phone=79999999999" target="_blank"
                         title="Написать в Whatsapp">
-                        <div class="callBtn" id="call"> Написать в WhatsApp</div>
+                        <div class="openWTSP" id="call"> Написать в WhatsApp <img src="wazzap_icons/whatsapp_icon.png"
+                                alt=""> </div>
                     </a>
-                    <a href="tel:+79999999999">
-                        <div class="openWTSP" id="message"> Позвонить </div>
+                    <a href="https://vk.com/live48" target="_blank">
+                        <div class="VKgroup" id="message"> Группа ВКонтакте <img src="wazzap_icons/vk_icon.png" alt="">
+                        </div>
+                    </a>
+                    <a href="#" data-hystmodal="#myModal2">
+                        <div class="emailBtn" id="message"> Написать на email <img src="wazzap_icons/email_icon.png"
+                                alt=""></div>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="hystmodal" id="myModal2" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <button data-hystclose class="hystmodal__close">Закрыть</button>
+                <div class="modalContent2">
+                    <form action="index.php" method="post" class="formContainer">
+                        <div class="text-field">
+                            <input class="text-field__input" type="text" name="name" id="name" placeholder="Введите свое имя">
+                        </div>
+                        <div class="text-field">
+                            <input class="text-field__input" type="text" name="email" id="email" placeholder="Введите свой email">
+                        </div>
+                        <div class="text-field">
+                            <input class="text-field__input" type="text" name="tel" id="tel" placeholder="Введите свой телефон">
+                        </div>
+                        <div class="text-field">
+                            <textarea class="text-field__input" type="text" name="comment" id="comment" placeholder="Комментарий"> </textarea>
+                        </div>
+                        <input class="submitBtn" type="submit" value="Отправить">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         const myModal = new HystModal({
+            linkAttributeName: "data-hystmodal"
+        });
+        const myModal2 = new HystModal({
             linkAttributeName: "data-hystmodal"
         });
     </script>
